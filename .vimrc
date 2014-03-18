@@ -60,23 +60,25 @@ Bundle 'The-NERD-tree'
   let NERDTreeWinPos=1
   let NERDTreeWinPos='left'
   let NERDTreeWinSize=25
-Bundle 'Valloric/youCompleteMe'
+"Bundle 'Valloric/youCompleteMe'
 
-Bundle 'Lokaltog/powerline'
-  python from powerline.vim import setup as powerline_setup
-  python powerline_setup()
-  python del powerline_setup
-  set rtp+=~/.vim/bundle/powerline/bindings/vim
+"Bundle 'Lokaltog/powerline'
+  "python from powerline.vim import setup as powerline_setup
+  "python powerline_setup()
+  "python del powerline_setup
+  "set rtp+=~/.vim/bundle/powerline/bindings/vim
   "call vam#ActivateAddons(['powerline'])
 
-"Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-powerline'
 "  let g:Powerline_symbols = 'fancy'
 
-Bundle 'mbbill/code_complete'
+"Bundle 'mbbill/code_complete'
 
 Bundle 'bufexplorer.zip'
 
 Bundle 'StringsStar/A'
+
+Bundle 'StringsStar/ConqueShell'
 "}
 
 syntax on
