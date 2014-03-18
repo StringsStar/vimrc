@@ -5,10 +5,11 @@ filetype off
 set backspace=indent,eol,start
 
 "tab setting {
-set tabstop=4
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+set tabstop=4	"设置tab为4个空格宽度"
+"set shiftwidth=2
+"set softtabstop=2
+"set expandtab
+set noexpandtab	"不扩展tab为空格，expandtab则扩展
 "}
 
 set fileformats=unix,dos,mac
@@ -32,10 +33,9 @@ nmap <leader>ss : s ~/.vimrc <cr>
 nmap - :res <cr>
 autocmd! bufwritepost .vimrc source %
 
-setlocal noexpandtab
+"setlocal noexpandtab
 " Despite promise somewhere alignment is done only using tabs. Thus setting 
 " &tabstop is a requirement.
-setlocal tabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle Settingsss{
