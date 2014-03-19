@@ -1,3 +1,4 @@
+"version 1.0.2
 set nu
 set nocompatible
 filetype off
