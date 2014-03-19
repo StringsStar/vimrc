@@ -4,8 +4,16 @@ filetype off
 
 set backspace=indent,eol,start
 
+"preference {
+set guifont=DejaVu\ Sans\ Mono\ 13
+set guioptions-=m	"隐藏gvim菜单和工具栏
+set guioptions-=T
+set go-=r	"去除左右两边的滚动条
+set go-=L
+"}
+
 "tab setting {
-set tabstop=4	"设置tab为4个空格宽度"
+set tabstop=2	"设置tab为4个空格宽度"
 "set shiftwidth=2
 "set softtabstop=2
 "set expandtab
@@ -18,7 +26,7 @@ set autoindent
 set incsearch
 set hlsearch
 set showmatch
-
+set ignorecase	"大小写敏感，小写匹配所有，大写精确匹配
 set laststatus=2
 set cmdheight=2
 
@@ -31,7 +39,17 @@ let mapleader=","
 nmap <leader>ee : e ~/.vimrc <cr>
 nmap <leader>ss : s ~/.vimrc <cr>
 nmap - :res <cr>
+nnoremap <leader><space> :noh<cr>	"取消搜索高亮
 autocmd! bufwritepost .vimrc source %
+imap <A-j> <Down>
+imap <A-k> <Up>
+imap <A-h> <Left>
+imap <A-l> <Right>
+
+nnoremap <A-1> 1gt
+nnoremap <A-2> 2gt
+nnoremap <A-3> 3gt
+nnoremap <A-4> 4gt
 
 "setlocal noexpandtab
 " Despite promise somewhere alignment is done only using tabs. Thus setting 
@@ -60,7 +78,7 @@ Bundle 'The-NERD-tree'
   let NERDTreeWinPos=1
   let NERDTreeWinPos='left'
   let NERDTreeWinSize=25
-"Bundle 'Valloric/youCompleteMe'
+Bundle 'Valloric/youCompleteMe'
 
 "Bundle 'Lokaltog/powerline'
   "python from powerline.vim import setup as powerline_setup
@@ -72,7 +90,7 @@ Bundle 'The-NERD-tree'
 Bundle 'Lokaltog/vim-powerline'
 "  let g:Powerline_symbols = 'fancy'
 
-"Bundle 'mbbill/code_complete'
+Bundle 'mbbill/code_complete'
 
 Bundle 'bufexplorer.zip'
 
