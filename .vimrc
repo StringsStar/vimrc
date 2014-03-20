@@ -1,4 +1,3 @@
-"version 1.0.4
 set nu
 set nocompatible
 filetype off
@@ -80,6 +79,17 @@ Bundle 'The-NERD-tree'
   let NERDTreeWinPos='left'
   let NERDTreeWinSize=25
 Bundle 'Valloric/youCompleteMe'
+	nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+	nnoremap <leader>gt :YcmCompleter GoToDefinition<CR>
+	nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+
+	"{ Fix Tab Key Error With UltiSnippets
+	let g:ycm_key_list_select_completion=['<C-Tab>','<Down>']
+	let g:SuperTabDefaultCompletionType = '<C-Tab>'
+	"}
+
+	let g:ycm_global_ycm_extra_conf = '~/.ycm_c_conf.py'
+	let g:ycm_confirm_extra_conf = 0
 
 "Bundle 'Lokaltog/powerline'
   "python from powerline.vim import setup as powerline_setup
@@ -91,13 +101,17 @@ Bundle 'Valloric/youCompleteMe'
 Bundle 'Lokaltog/vim-powerline'
 "  let g:Powerline_symbols = 'fancy'
 
-Bundle 'mbbill/code_complete'
+"Bundle 'mbbill/code_complete'
 
 Bundle 'bufexplorer.zip'
 
 Bundle 'StringsStar/A'
 
 Bundle 'StringsStar/ConqueShell'
+
+Bundle 'StringsStar/SuperTab'
+
+Bundle 'StringsStar/UltiSnips'
 "}
 
 syntax on
