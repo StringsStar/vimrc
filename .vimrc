@@ -1,5 +1,6 @@
 set nu
 set nocompatible
+"colorscheme morning
 filetype off
 
 set backspace=indent,eol,start
@@ -13,6 +14,8 @@ set go-=L
 "}
 
 "tab setting {
+set cindent
+set shiftwidth=2 "设置indent为2 代替原来的8
 set tabstop=2	"设置tab为4个空格宽度"
 "set shiftwidth=2
 "set softtabstop=2
@@ -25,7 +28,7 @@ set fileencodings=utf-8,cp936,gb18030,latin1
 set autoindent
 set incsearch
 set hlsearch
-set showmatch
+"set showmatch
 set ignorecase	"大小写敏感，小写匹配所有，大写精确匹配
 set laststatus=2
 set cmdheight=2
@@ -78,17 +81,20 @@ Bundle 'The-NERD-tree'
   let NERDTreeWinPos=1
   let NERDTreeWinPos='left'
   let NERDTreeWinSize=25
+
 Bundle 'Valloric/youCompleteMe'
 	nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 	nnoremap <leader>gt :YcmCompleter GoToDefinition<CR>
 	nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-
+  let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
+  let g:ycm_add_preview_to_completeopt = 0
 	"{ Fix Tab Key Error With UltiSnippets
-	let g:ycm_key_list_select_completion=['<C-Tab>','<Down>']
-	let g:SuperTabDefaultCompletionType = '<C-Tab>'
+	"let g:ycm_key_list_select_completion=['<C-Tab>','<Down>']
+	"let g:SuperTabDefaultCompletionType = '<C-Tab>'
 	"}
 
-	let g:ycm_global_ycm_extra_conf = '~/.ycm_c_conf.py'
+	"let g:ycm_global_ycm_extra_conf = '~/.ycm_c_conf.py'
+	let g:ycm_global_ycm_extra_conf = '~/.ycm_cpp_conf.py'
 	let g:ycm_confirm_extra_conf = 0
 
 "Bundle 'Lokaltog/powerline'
@@ -105,13 +111,25 @@ Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'bufexplorer.zip'
 
-Bundle 'StringsStar/A'
+"Bundle 'StringsStar/A'
+"有个跟leader快捷键重复的问题，fixing
 
 Bundle 'StringsStar/ConqueShell'
 
-Bundle 'StringsStar/SuperTab'
+"Bundle 'StringsStar/SuperTab'
+Bundle 'StringsStar/vim-colors-solarized'
 
 Bundle 'StringsStar/UltiSnips'
+if !exists("g:UltiSnipsJumpForwardTrigger")
+    let g:UltiSnipsJumpForwardTrigger = "<tab>"
+endif
+if !exists("g:UltiSnipsJumpBackwardTrigger")
+    let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+endif
 "}
 
+"filetype plugin indent on
 syntax on
+set background=light
+"set background=dark
+colorscheme solarized
